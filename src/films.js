@@ -21,37 +21,33 @@ function getMoviesFromDirector(movies, directorName) {
   return moviesFromDirector;
 }
 
-// Ejercicio 3: Para este ejercicio vamos a calcular el promedio de las puntuaciones de las películas de un director específico. Luego de sumar el total de las puntuaciones, se divide por la cantidad de películas. Al resultado lo redondeamos a dos decimales.
+// Ejercicio 3: Para este ejercicio vamos a calcular el promedio de las puntuaciones de las películas de un director específico. Luego de sumar el total de las puntuaciones, se divide por la cantidad de películas. Al resultado lo redondeamos a dos decimales. Agregamos una comprobación para devolver 0 si el director no tiene películas..
 
 function moviesAverageOfDirector(movies, director) {
   
   const directorMovies = movies.filter(movie => movie.director === director);
- 
-  const totalScores = directorMovies.reduce((acc, movie) => acc + movie.score, 0);
 
+  if (directorMovies.length === 0) return 0; 
+
+  const totalScores = directorMovies.reduce((sum, movie) => sum + movie.score, 0);
   const averageScore = totalScores / directorMovies.length;
-
   const roundedAverage = parseFloat(averageScore.toFixed(2));
 
   console.log(`El promedio de las películas dirigidas por ${director} es: ${roundedAverage}`);
-
   return roundedAverage;
+
 }
 
 
-// Ejercicio 4:  Con este ejercicio vamos a ordenar las películas alfabéticamente. Para ello, primero ordenamos las películas por título y luego extraemos solo los títulos de las películas ordenadas. Finalmente, tomamos solo los primeros 20 títulos ordenados alfabéticamente. 
+// Ejercicio 4:  Con este ejercicio vamos a ordenar las películas alfabéticamente. Para ello, primero clonamos usando el método spread, ordenamos las películas por título y luego extraemos solo los títulos de las películas ordenadas. Finalmente, tomamos solo los primeros 20 títulos ordenados alfabéticamente. 
 
 function orderAlphabetically(movies) {
- 
-  const sortedMovies = movies
+
+  return [...movies]
+        
     .sort((a, b) => a.title.localeCompare(b.title))
-    .map(movie => movie.title);   
-
-  const top20Movies = sortedMovies.slice(0, 20);
-
-  console.log("Top 20 películas ordenadas alfabéticamente:", top20Movies );  
-  
-  return top20Movies;
+    .map(movie => movie.title)
+    .slice(0, 20);
 }
 
 
