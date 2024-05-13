@@ -1,26 +1,27 @@
-// Ejercicio 1: Get the array of all directors.
+// Ejercicio 1: Conseguir un array con los directores de todas las películas utilizando map. 
 
-function getAllDirectors(array) {
+function getAllDirectors(movies) {
 
-  let result = array.map(movie => movie.director);
+  let result = movies.map(movie => movie.director);
 
-  console.log("EXERCICE 1 ->", result);
+  console.log("Dierctores:", result);
 
   return result;
-
+  
 }
 
-// Ejercicio 2: Filtrar las películas por el nombre del director utilizando filter.
+// Ejercicio 2: Conseguir un array con las películas de un director en paticular utilizando filter.
+
 function getMoviesFromDirector(movies, directorName) {
   
   const moviesFromDirector = movies.filter(movie => movie.director === directorName);
   
-  console.log("Movies from director", directorName, ":", moviesFromDirector);
+  console.log("Películas del director", directorName, ":", moviesFromDirector);
   
   return moviesFromDirector;
 }
 
-// Ejercicio 3: Para este ejercicio vamos a calcular el promedio de las puntuaciones de las películas de un director específico. Luego de sumar el total de las puntuaciones, se divide por la cantidad de películas. Al resultado lo redondea,os a dos decimales.
+// Ejercicio 3: Para este ejercicio vamos a calcular el promedio de las puntuaciones de las películas de un director específico. Luego de sumar el total de las puntuaciones, se divide por la cantidad de películas. Al resultado lo redondeamos a dos decimales.
 
 function moviesAverageOfDirector(movies, director) {
   
@@ -52,7 +53,6 @@ function orderAlphabetically(movies) {
   
   return top20Movies;
 }
-module.exports = { orderAlphabetically };
 
 
 // Ejercicio 5: Al ordenar las películas por año, si dos películas tienen el mismo año, se ordenarán por título. Y si son diferentes se ordenan por año.
@@ -74,10 +74,19 @@ function orderByYear(movies) {
   return sortedMovies;
 }
 
-module.exports = { orderByYear };
 
 
-// Ejercicio 6: Transformar la duración de las películas de horas a minutos. Separamos la duración en horas y minutos, convertimos las horas a minutos y sumamos los minutos adicionales. Finalmente, devolvemos la película con la duración convertida a minutos.
+// Exercise 6: Calculate the average of the movies in a category
+function moviesAverageByCategory() {
+
+} 
+
+
+
+
+
+
+// Ejercicio 7: Transformar la duración de las películas de horas a minutos. Separamos la duración en horas y minutos, convertimos las horas a minutos y sumamos los minutos adicionales. Finalmente, devolvemos la película con la duración convertida a minutos.
 
 function hoursToMinutes(movies) {
   
@@ -102,14 +111,6 @@ function hoursToMinutes(movies) {
   console.log("Movies with duration converted to minutes:", convertedMovies);
 
   return convertedMovies;
-}
-
-module.exports = { hoursToMinutes };
-
-
-// Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
-
 }
 
 // Exercise 8: Get the best film of a year
