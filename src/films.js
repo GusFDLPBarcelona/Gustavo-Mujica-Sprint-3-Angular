@@ -42,14 +42,14 @@ function moviesAverageOfDirector(movies, director) {
 // Ejercicio 4:  Con este ejercicio vamos a ordenar las películas alfabéticamente. Para ello, primero clonamos usando el método spread, ordenamos las películas por título y luego extraemos solo los títulos de las películas ordenadas. Finalmente, tomamos solo los primeros 20 títulos ordenados alfabéticamente. 
 
 function orderAlphabetically(movies) {
-
-  return [...movies]
-        
+  const orderedMovies = [...movies]
     .sort((a, b) => a.title.localeCompare(b.title))
     .map(movie => movie.title)
     .slice(0, 20);
-}
 
+  console.log('Ordered movies:', orderedMovies);
+  return orderedMovies;
+}
 
 // Ejercicio 5: Al ordenar las películas por año, si dos películas tienen el mismo año, se ordenarán por título. Y si son diferentes se ordenan por año.
 
@@ -71,25 +71,23 @@ function orderByYear(movies) {
 }
 
 
-
 // EEjercicio 6: Calcular el promedio de duración de las películas de por categoría. Primero filtramos las películas por categoría. Luego, si no hay películas en alguna categoría, la función devuelve  0. Calculamos la suma total de las duraciones de las películas y luego el promedio de duración. Finalmente, devolvemos el promedio redondeado a dos decimales.
 
 function moviesAverageByCategory(array, genre) {
   let genreArray = array.filter(film => film.genre.includes(genre));
-  if (genreArray.length === 0) return 0; 
+  if (genreArray.length === 0) {
+    console.log('No movies found for genre:', genre);
+    return 0;
+  }
   
   let totalScore = genreArray.reduce((total, film) => total + film.score, 0);
   let averageScore = totalScore / genreArray.length;
   
+  console.log('Average score for genre', genre, ':', parseFloat(averageScore.toFixed(2)));
   return parseFloat(averageScore.toFixed(2));
 }
 
-
-
-
-
-
-// Ejercicio 7: Transformar la duración de las películas de horas a minutos. Separamos la duración en horas y minutos, convertimos las horas a minutos y sumamos los minutos adicionales. Finalmente, devolvemos la película con la duración convertida a minutos.
+// Ejercicio 7: Transformar la duración de las películas de horas a minutos. Separamos la duración en horas y minutos, convertimos las horas a minutos y sumamos los minutos adicionales. 
 
 function hoursToMinutes(movies) {
   
@@ -108,7 +106,7 @@ function hoursToMinutes(movies) {
       }
     });
 
-    return { ...movie, duration: totalMinutes }; // Devolver la película con la duración convertida a minutos
+    return { ...movie, duration: totalMinutes };
   });
 
   console.log("Movies with duration converted to minutes:", convertedMovies);
@@ -116,12 +114,22 @@ function hoursToMinutes(movies) {
   return convertedMovies;
 }
 
-// Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
-  
+// Exercise 8: Conseguir la mejor película de un año en particular.
+//Filtramos las películas por año.Si no hay películas en ese año, devolvemos un array vacío.Luego, obtenemos la mejor puntuación de ese año y filtramos las películas por la mejor puntuación.
+
+function bestFilmOfYear(movies, year) {
+  const moviesOfYear = movies.filter(movie => movie.year === year);
+  if (!moviesOfYear.length) {
+    console.log('No movies found for year:', year);
+    return [];
+  }
+
+  const bestScore = Math.max(...moviesOfYear.map(movie => movie.score));
+  const bestMovies = moviesOfYear.filter(movie => movie.score === bestScore);
+
+  console.log('Best movies of year', year, ':', bestMovies);
+  return bestMovies;
 }
-
-
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
