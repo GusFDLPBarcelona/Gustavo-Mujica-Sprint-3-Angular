@@ -72,10 +72,17 @@ function orderByYear(movies) {
 
 
 
-// Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
+// EEjercicio 6: Calcular el promedio de duración de las películas de por categoría. Primero filtramos las películas por categoría. Luego, si no hay películas en alguna categoría, la función devuelve  0. Calculamos la suma total de las duraciones de las películas y luego el promedio de duración. Finalmente, devolvemos el promedio redondeado a dos decimales.
 
-} 
+function moviesAverageByCategory(array, genre) {
+  let genreArray = array.filter(film => film.genre.includes(genre));
+  if (genreArray.length === 0) return 0; 
+  
+  let totalScore = genreArray.reduce((total, film) => total + film.score, 0);
+  let averageScore = totalScore / genreArray.length;
+  
+  return parseFloat(averageScore.toFixed(2));
+}
 
 
 
