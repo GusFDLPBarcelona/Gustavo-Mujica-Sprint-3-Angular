@@ -292,6 +292,7 @@ describe('Function "orderByYear"', () => {
 
 // Exercise 6
 // YOUR CODE HERE. Test moviesAverageByCategory()
+// La primera prueba verifica que moviesAverageByCategory esté declarada y sea una función. La segunda prueba verifica que la función devuelva un número cuando se le proporciona un array de películas y un género. La tercera prueba verifica que la función no devuelva NaN (Not a Number). La última prueba verifica que la función devuelva la puntuación media de las películas del género especificado, y también verifica que este valor no sea NaN.
 
 describe('Function "moviesAverageByCategory"', () => {
   it('should be declared', () => {
