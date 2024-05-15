@@ -1,5 +1,5 @@
 En primer lugar está la explicación del sprint que ofrece IT Academy. 
-Al terminar agrego en castellano los tips que me parecen útiles sobre este sprint.
+Al terminar agrego en castellano los tips sobre los ejercicios y este repositorio.
 
 # Sprint 3 IT Academy | Video management tool
 
