@@ -1,3 +1,6 @@
+En primer lugar está la explicación del sprint que ofrece IT Academy. 
+Al terminar agrego en castellano los tips que me parecen útiles sobre este sprint.
+
 # Sprint 3 IT Academy | Video management tool
 
 ## Introduction
@@ -83,6 +86,7 @@ an array of information about 250 movies.
 
 - Don't forget to include the capture of the test results in the virtual campus.
 
+---------------------------------------------------------------------------------------
 
 Este sprint nos introduce en el territorio de las comprobaciones por test. Usaremos Jest para monitorear las funciones y asegurarnos de que pasan las pruebas programadas. 
 
