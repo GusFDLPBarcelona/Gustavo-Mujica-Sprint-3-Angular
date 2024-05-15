@@ -10,8 +10,6 @@ function getAllDirectors(movies) {
   
 }
 
-
-
 function getMoviesFromDirector(movies, directorName) {
   
   const moviesFromDirector = movies.filter(movie => movie.director === directorName);
@@ -20,8 +18,6 @@ function getMoviesFromDirector(movies, directorName) {
   
   return moviesFromDirector;
 }
-
-
 
 function moviesAverageOfDirector(movies, director) {
   
@@ -38,8 +34,6 @@ function moviesAverageOfDirector(movies, director) {
 
 }
 
-
-
 function orderAlphabetically(movies) {
   const orderedMovies = [...movies]
     .sort((a, b) => a.title.localeCompare(b.title))
@@ -49,7 +43,6 @@ function orderAlphabetically(movies) {
   console.log('Ordered movies:', orderedMovies);
   return orderedMovies;
 }
-
 
 function orderByYear(movies) {
 
@@ -68,8 +61,6 @@ function orderByYear(movies) {
   return sortedMovies;
 }
 
-
-
 function moviesAverageByCategory(array, genre) {
   let genreArray = array.filter(film => film.genre.includes(genre));
   if (genreArray.length === 0) {
@@ -83,7 +74,6 @@ function moviesAverageByCategory(array, genre) {
   console.log('Average score for genre', genre, ':', parseFloat(averageScore.toFixed(2)));
   return parseFloat(averageScore.toFixed(2));
 }
-
 
 function hoursToMinutes(movies) {
   
@@ -109,7 +99,6 @@ function hoursToMinutes(movies) {
 
   return convertedMovies;
 }
-
 
 function bestFilmOfYear(movies, year) {
   const moviesOfYear = movies.filter(movie => movie.year === year);
