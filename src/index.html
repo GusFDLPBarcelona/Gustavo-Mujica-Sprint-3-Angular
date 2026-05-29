@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Gustavo Mujica">
+  <title>Sprint 3 — Films Database</title>
+  <style>
+    body {
+      margin-left: 20px;
+      font-family: Arial;
+    }
+  </style>
+</head>
 
 <body>
 
-    <h1>Sprint 4 IT ACADEMY</h1>
-    <button onclick="getAllDirectors(movies)">Directores</button>
-    <hr><br>
-    <input type="text" id="directorName" placeholder="Nombre del Director">
-    <button onclick="getMoviesFromDirector(movies, document.getElementById('directorName').value)">Películas de un director</button>
-    <hr><br>
-    
+  <h1>Sprint 4 IT ACADEMY</h1>
+  <p>Base de datos de 250 películas con funciones de búsqueda, ordenación y análisis. Para ver los directores y los resultados de búsqueda abre la consola del navegador (F12).</p>
+  <hr><br>
+  <button onclick="getAllDirectors(movies)">Directores</button>
+  <hr><br>
+  <input type="text" id="directorName" placeholder="Nombre del Director">
+  <button onclick="getMoviesFromDirector(movies, document.getElementById('directorName').value)">Películas de un director</button>
+  <hr><br>
 
 </body>
-<script src="films.js"></script>
 <script src="data.js"></script>
+<script src="films.js"></script>
 </html>

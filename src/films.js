@@ -4,7 +4,7 @@ function getAllDirectors(movies) {
 
   let result = movies.map(movie => movie.director);
 
-  console.log("Dierctores:", result);
+  console.log("Directores:", result);
 
   return result;
   
