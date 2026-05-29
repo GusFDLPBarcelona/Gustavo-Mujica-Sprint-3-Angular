@@ -2,6 +2,10 @@
 
 Base de datos de 250 películas con funciones de búsqueda, ordenación y análisis estadístico implementadas en JavaScript puro.
 
+## Demo
+
+[Ver demo en vivo](https://gusfdlpbarcelona.github.io/Gustavo-Mujica-Sprint-3-Angular/src/)
+
 ## Funcionalidades
 
 | # | Función | Descripción |
